@@ -21,3 +21,5 @@
 **10. section** : NXN 행렬 내부에 MXM 만큼의 section 안에 들어 있는 수의 리스트 구하기
 
 **11. sudoku** : 9X9 행렬의 스도쿠에서 3X3의 section 9개로 나눠 각 section별 수의 리스트 구하기
+
+**12. string_reverse** : 주어진 문자열을 역순으로 나열하는 함수
