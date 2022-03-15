@@ -25,4 +25,4 @@ def dfs(s):
 lst = [1,2,2,3,3,4,5,4]
 close = [[] for _ in range(N)] # N은 노드의 수
 for i in range(0,len(lst),2): #2간격으로 lst를 보면서 어디로 갈 수 있는지 append한다.
-    close[i].append(i+1)
+    close[i].append(lst[i+1])
