@@ -3,7 +3,7 @@ def partitionH(s, e): # 피봇을 시작점으로 본것
     lp = s + 1
     rp = e
     while lp <= rp:
-        while lp <= e and lst[p] >= lst[lp]: # 피봇보다 작은것을 찾는다. / 둘중에 하나에는 등호를 넣어 줘야한다.(피봇값과 같은 값이 있을경우 대비)
+        while lp <= e and lst[p] >= lst[lp]: # 피봇보다 작은것을 찾는다. / 두 while문 중 하나에는 등호를 넣어 줘야한다.(피봇값과 같은 값이 있을경우 대비)
             lp += 1 # 증가하다가 인덱스 안넘도록 lp <= e
         while rp >= s and lst[p] < lst[rp]: # 피봇보다 큰것을 찾는다.
             rp -= 1 # 빼지다가 인덱스 안넘도록 s <= rp
@@ -25,7 +25,7 @@ def partitionL(s, e): # 피봇을 끝점으로 본것
     return i
 
 
-# 퀵정렬 / 피봇이 좌측인 경우
+# 퀵정렬
 def quickSort(s, e):
     if s < e: # 시작점(s)가 끝점(e)보다 작은 경우에만
         pivot = partitionL(s, e) 

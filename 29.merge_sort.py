@@ -28,12 +28,12 @@ def mergeSort(lst):
 
     #중간지점을 계산
     m = len(lst) // 2
-    # 중간기준 왼쪽 오른쪽을 다시 병합정렬(재귀)
+    # 중간기준 왼쪽 오른쪽을 다시 분할(재귀)
     left = mergeSort(lst[:m])
     right = mergeSort(lst[m:])
     result = merge(left, right)
 
     return result
 
-lst = [69,10,30,2,16,8,31,22]
+lst = [16,5,8,91,15,1,6]
 print(mergeSort(lst))
