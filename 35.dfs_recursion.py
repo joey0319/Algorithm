@@ -8,6 +8,27 @@ def dfs1(i): # i번 노드부터 탐색을 시작하라는 뜻
         if adjM[i][w] == 1 and not visited[w]:
             dfs1(w)
 
+# 위와 똑같은 상황에서 경로의 개수를 구하는 문제에서는
+# visited처리를 바꿔줘야한다.
+# 1-2-3-4-6 경로와 1-2-5-6 경로가 모두 인식하고싶을 때
+# 2를 방문처리 해버리면 한번 밖에 인식이 안된다.
+p = [-1] * 100
+def find_path(k, v):
+    #7이 goal
+    if v==7:
+        print(k, p)
+        return
+
+    visited[v] = True # 1
+    for w in adjL[v]:
+        if not visited[w]:
+            #visited[w] = True 주석처럼 이렇게 세트로 처리해주던가
+            p[k] = w
+            find_path(k+1, w)
+            #visited[w] = False
+    visited[v] = False # 1번이랑 세트로 처리해주던가 둘중 하나
+ 
+
 # 인접 리스트를 이용하는 방법
 def dfs2(v, V): # V는 노드의 수 v는 시작점
     visited[v] = 1
@@ -17,14 +38,14 @@ def dfs2(v, V): # V는 노드의 수 v는 시작점
             dfs2(w,V)
 
 
-# 입력이 주어질 때 인접행렬을 나타내기
+
 '''
 6 8
 0 1 0 2 0 5 0 6 5 3 4 3 5 4 6 4
 정점이 6개 있고 간선은 8개 있고 다음 줄은 출발 도착 노드순으로 나타냄
 '''
 
-# 1. 방향이 없는 그래프
+
 V, E = map(int, input().split())
 arr = list(map(int, input().split()))
 adjM = [[0] * (V+1) for _ in range(V+1)] # 인접행렬
@@ -36,7 +57,7 @@ for i in range(E):
     # 방향성이 있으면 한줄만 1로 바꿔줘야 한다.
     # 보통 행을 출발점 열을 도착점이라고 생각한다.
 
-# adjL을 나타내기 0과 연결된 번호를 저장해주는 방식
+
 adjL = [[] for _ in range(V+1)]
 for i in range(E):
     n1, n2 = arr[i*2], arr[i*2+1]
