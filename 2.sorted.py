@@ -10,6 +10,16 @@ print('오름차순 정렬:', sorted_list)
 reverse_list = sorted(list, reverse = True)
 print('내림차순 정렬:', reverse_list)
 
+#1-2. 2차원리스트를 인덱스 2를 기준으로 정렬하는 방법
+lst = [
+    [1,2,3],
+    [0,4,2],
+    [10,23,1],
+    [1,6,16]
+]
+sorted_lst = sorted(lst, key=lambda lst: lst[2])
+print('2차원리스트 인덱스 2기준 정렬:', sorted_lst)
+
 # 2. vlaue를 기준으로 딕셔너리 정렬하는 sorted 함수
 
 foods = {'햄버거':90, '참치':150, '소고기':170, '회':5}
