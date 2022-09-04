@@ -6,7 +6,8 @@ arr = [3,6,9,1,5,14]
 n = len(arr)
 
 for i in range(1<<n): # n 비트만큼 1을 왼쪽으로 이동 = 2**n = 원소의 개수가 6일 때 부분집합의 총 개수 
+    tmp = []
     for j in range(n): 
         if i & (1<<j): # i라는 숫자의 j 번째 비트가 1이면 1을 아니면 0을 반환하는 연산
-            print(arr[j], end = ' ')
-    print()
+            tmp.append(arr[j])
+    print(tmp)
